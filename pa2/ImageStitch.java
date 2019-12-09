@@ -149,19 +149,11 @@ public class ImageStitch {
 			}
 		}
 		
-		
-		
-		
-		
 		return matrix;
 	}
 	
 	
-	
-	
 
-	
-	
 	public static int pixelDistance(Color c1, Color c2) {
 		
 		int r1 = c1.getRed();
