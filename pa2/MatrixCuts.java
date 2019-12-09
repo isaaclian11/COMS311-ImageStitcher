@@ -76,11 +76,11 @@ public class MatrixCuts {
                 if(downRight<downLeft){
                     minRow+=1;
                     minCol+=1;
-                }else if(downRight==downLeft || downLeft<downRight){
+                }else{
                     minRow+=1;
                     minCol-=1;
                 }
-            }else if(downRight==down || down<downRight){
+            }else {
                 if(down<downLeft)
                     minRow+=1;
                 else {
