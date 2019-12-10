@@ -1,5 +1,9 @@
 package pa2;
 
+/**
+ * @author Isaac Sanga and Justin Worley
+ */
+
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;

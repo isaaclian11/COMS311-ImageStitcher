@@ -1,5 +1,9 @@
 package pa2;
 
+/**
+ * @author Isaac Sanga and Justin Worley
+ */
+
 import java.util.ArrayList;
 
 public class MatrixCuts {
