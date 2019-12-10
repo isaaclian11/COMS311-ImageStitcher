@@ -16,8 +16,8 @@ public class ImageStitch {
 	
 	public static void main(String[] args) {
 		
-		Picture p1 = new Picture("iastate1.jpg");
-		Picture p2 = new Picture("iastate2.jpg");
+		Picture p1 = new Picture("na1.jpg");
+		Picture p2 = new Picture("na2.jpg");
 		Picture p = stitch(p1, p2);
 		p1.show();
 		p2.show();
@@ -25,11 +25,6 @@ public class ImageStitch {
 		
 		
 	}
-	
-	
-	
-	
-	
 	
 	
 	
