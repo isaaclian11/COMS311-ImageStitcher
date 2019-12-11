@@ -150,9 +150,24 @@ public class MatrixCuts {
         tupleList.add(new Tuple(minRow, minCol));
 
         while(minRow<m-1 && minCol<n-1){
-            int right = costMatrix[minRow][minCol+1];
-            int diag = costMatrix[minRow+1][minCol+1];
-            int down = costMatrix[minRow+1][minCol];
+            int right;
+            if(minCol+1>=n) {
+                right = Integer.MAX_VALUE;
+            }else{
+                right = costMatrix[minRow][minCol+1];
+            }
+            int diag;
+            if(minCol+1>=n || minRow+1>=m){
+                diag = Integer.MAX_VALUE;
+            }else {
+                diag = costMatrix[minRow + 1][minCol + 1];
+            }
+            int down;
+            if(minRow+1>=m){
+                down =Integer.MAX_VALUE;
+            }else{
+                down = costMatrix[minRow+1][minCol];
+            }
 
             if(right<diag){
                 if(right<down){
