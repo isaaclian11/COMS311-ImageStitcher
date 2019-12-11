@@ -65,13 +65,13 @@ public class MatrixCuts {
         while(minRow<m-1){
             int down = costMatrix[minRow+1][minCol];
             int downRight;
-            if(minCol+1==m)
+            if(minCol+1>=n)
                 downRight = Integer.MAX_VALUE;
             else
                 downRight = costMatrix[minRow+1][minCol+1];
 
             int downLeft;
-            if(minCol==0)
+            if(minCol<=0)
                 downLeft = Integer.MAX_VALUE;
             else
                 downLeft = costMatrix[minRow+1][minCol-1];

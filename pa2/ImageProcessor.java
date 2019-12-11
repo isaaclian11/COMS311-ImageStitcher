@@ -43,7 +43,7 @@ public class ImageProcessor {
 
                 for (int r = 0; r < picture.height(); r++) {
                     for (int o = 0; o < picture.width() - 1; o++) {
-                        if (0 == tuples.get(r + 1).getY()) {
+                        if (o == tuples.get(r + 1).getY()) {
                             newPicture.setRGB(o, r, picture.getRGB(o + 1, r));
                         } else {
                             newPicture.setRGB(o, r, picture.getRGB(o, r));
@@ -54,14 +54,14 @@ public class ImageProcessor {
                 picture = newPicture;
             }
         }catch (Exception e){
-
-            System.out.print("\nError - Trying to reduce width that is equal or greater than the Picture's width\n");
+            System.out.print(e);
+           // System.out.print("\nError - Trying to reduce width that is equal or greater than the Picture's width\n");
         }
         return picture;
     }
 
     public static void main(String[] args){
-        Picture p = reduceWidth(1338, "na1.jpg");
+        Picture p = reduceWidth(800, "na1.jpg");
 
         p.save(new File("n1-result.jpg"));
     }
