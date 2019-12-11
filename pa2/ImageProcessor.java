@@ -40,15 +40,16 @@ public class ImageProcessor {
                 }
                 ArrayList<Tuple> tuples = MatrixCuts.widthCut(matrix);
                 Picture newPicture = new Picture(picture.width() - 1, picture.height());
-
                 for (int r = 0; r < picture.height(); r++) {
+                    int shiftLeft=0;
                     for (int o = 0; o < picture.width() - 1; o++) {
                         if (o == tuples.get(r + 1).getY()) {
-                            newPicture.setRGB(o, r, picture.getRGB(o + 1, r));
-                        } else {
-                            newPicture.setRGB(o, r, picture.getRGB(o, r));
+                            shiftLeft = 1;
                         }
-
+                        if(shiftLeft==1)
+                            newPicture.setRGB(o, r, picture.getRGB(o + 1, r));
+                         else
+                            newPicture.setRGB(o, r, picture.getRGB(o, r));
                     }
                 }
                 picture = newPicture;
@@ -61,7 +62,7 @@ public class ImageProcessor {
     }
 
     public static void main(String[] args){
-        Picture p = reduceWidth(800, "na1.jpg");
+        Picture p = reduceWidth(1000, "na2.jpg");
 
         p.save(new File("n1-result.jpg"));
     }
